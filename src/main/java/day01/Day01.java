@@ -2,8 +2,8 @@ package day01;
 
 import utils.Utils;
 
-import java.io.FileNotFoundException;
 import java.util.List;
+import java.util.stream.IntStream;
 
 public class Day01 {
 
@@ -19,7 +19,7 @@ public class Day01 {
         int previousSum = -1;
         for(int i = 0; i < input.size(); i++) {
             if(i+2 < input.size()) {
-                int nextSum = input.get(i)+ input.get(i+1)+input.get(i+2);
+                int nextSum = IntStream.range(i, i+3).map(input::get).sum();
                 if(previousSum != -1 && previousSum < nextSum) {
                     count++;
                 }
