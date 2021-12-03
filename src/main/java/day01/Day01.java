@@ -2,6 +2,7 @@ package day01;
 
 import utils.Utils;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.IntStream;
 
@@ -31,9 +32,14 @@ public class Day01 {
 
 
     public static void main(String ...args) {
-        List<Integer> input01 = Utils.parseInput("day1_input1.txt");
+        List<String> inputString = Utils.parseInput("day1_input1.txt");
+        List<Integer> input = new ArrayList<>();
 
-        System.out.println(part1(input01));
-        System.out.println(part2(input01));
+        for(String line: inputString) {
+            input.add(Integer.parseInt(line));
+        }
+
+        System.out.println(part1(input));
+        System.out.println(part2(input));
     }
 }

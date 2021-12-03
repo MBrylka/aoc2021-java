@@ -1,5 +1,4 @@
 package utils;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -9,8 +8,8 @@ import java.util.Scanner;
 public class Utils {
 
 
-    public static List<Integer> parseInput(String filename){
-        List<Integer> values = new ArrayList<>();
+    public static List<String> parseInput(String filename){
+        List<String> values = new ArrayList<>();
 
         File file = new File("inputs\\"+filename);
         Scanner sc = null;
@@ -25,7 +24,7 @@ public class Utils {
             String line = sc.nextLine();
             line = line.replace("\n", "");
 
-            values.add(Integer.parseInt(line));
+            values.add(line);
         }
 
         return values;
